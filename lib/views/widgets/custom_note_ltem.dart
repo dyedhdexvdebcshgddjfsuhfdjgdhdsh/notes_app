@@ -19,13 +19,13 @@ class NoteItem extends StatelessWidget {
               style: TextStyle(
                   color: Colors.black,
                   fontWeight: FontWeight.bold,
-                  fontSize: 20),
+                  fontSize: 24),
             ),
             subtitle: Padding(
               padding: const EdgeInsets.only(top: 8, bottom: 8),
               child: Text('build your career with thrwat samy',
                   style: TextStyle(
-                      color: Colors.black.withOpacity(0.5), fontSize: 17)),
+                      color: Colors.black.withOpacity(0.5), fontSize: 18)),
             ),
             trailing: Padding(
               padding: const EdgeInsets.only(bottom: 23),
