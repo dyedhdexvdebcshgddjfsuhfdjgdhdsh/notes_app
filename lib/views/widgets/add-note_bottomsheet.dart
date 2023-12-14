@@ -14,7 +14,9 @@ class AddNotesBottomSheet extends StatelessWidget {
           SizedBox(
             height: 32,
           ),
-          CustomTextField()
+          CustomTextField(hint: 'Title', maxLine: 1),
+          SizedBox(height: 12),
+          CustomTextField(maxLine: 5, hint: 'Content')
         ],
       ),
     );
@@ -22,15 +24,18 @@ class AddNotesBottomSheet extends StatelessWidget {
 }
 
 class CustomTextField extends StatelessWidget {
-  const CustomTextField({Key? key}) : super(key: key);
-
+  const CustomTextField({Key? key, required this.hint, required this.maxLine})
+      : super(key: key);
+  final String hint;
+  final int maxLine;
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 20),
       child: TextField(
+        maxLines: maxLine,
         decoration: InputDecoration(
-            hintText: 'Title',
+            hintText: hint,
             hintStyle: TextStyle(color: kPrimaryColor),
             border: buildBorder(),
             enabledBorder: buildBorder(),
