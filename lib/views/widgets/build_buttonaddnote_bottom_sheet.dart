@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:notes_app/constants.dart';
 
 class CustomButtonAddNote extends StatelessWidget {
-  const CustomButtonAddNote({Key? key}) : super(key: key);
+  const CustomButtonAddNote({Key? key, required this.onPressed})
+      : super(key: key);
 
-  @override
+  final void Function()? onPressed;
   Widget build(BuildContext context) {
     return Container(
       height: 55,
@@ -14,7 +15,7 @@ class CustomButtonAddNote extends StatelessWidget {
         color: kPrimaryColor,
       ),
       child: TextButton(
-          onPressed: () {},
+          onPressed: onPressed,
           child: Text(
             'Add',
             style: TextStyle(fontSize: 20, color: Colors.black),
