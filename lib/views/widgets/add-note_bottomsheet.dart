@@ -22,7 +22,7 @@ class _AddNotesBottomSheetState extends State<AddNotesBottomSheet> {
         builder: (context, state) {
           return ModalProgressHUD(
               inAsyncCall: state is LoadingSatate ? true : false,
-              child: AddNotesForm());
+              child: SingleChildScrollView(child: AddNotesForm()));
         },
         listener: (context, state) {
           // Add any necessary logic in the listener
@@ -33,7 +33,7 @@ class _AddNotesBottomSheetState extends State<AddNotesBottomSheet> {
             Navigator.pop(context);
           }
           if (state is FailureState) {
-            debugPrint('Failure ${state.errorMessage}');
+            print('Failure ${state.errorMessage}');
           }
         },
       ),
