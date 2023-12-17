@@ -1,12 +1,12 @@
-abstract class State {}
+abstract class MyState {}
 
-class InitalState extends State {}
+class InitalState extends MyState {}
 
-class LoadingSatate extends State {}
+class LoadingSatate extends MyState {}
 
-class SuccessState extends State {}
+class SuccessState extends MyState {}
 
-class FailureState extends State {
+class FailureState extends MyState {
   final String errorMessage;
   FailureState(this.errorMessage);
 }
