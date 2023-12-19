@@ -10,13 +10,13 @@ class AddNoteCubit extends Cubit<MyState> {
   static AddNoteCubit get(context) => BlocProvider.of(context);
 
   void addNotes(NoteModel noteModel) async {
-    emit(LoadingSatate());
+    emit(AddNotesLoadingSatate());
     try {
       var notesBox = Hive.box<NoteModel>(kname_NotesBox);
       await notesBox.add(noteModel);
-      emit(SuccessState());
+      emit(AddNotesSuccessState());
     } catch (error) {
-      emit(FailureState('Error : ${error.toString()}'));
+      emit(AddNotesFailureState('Error : ${error.toString()}'));
     }
 
     // calling method where T is String

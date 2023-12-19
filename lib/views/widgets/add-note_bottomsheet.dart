@@ -20,7 +20,7 @@ class _AddNotesBottomSheetState extends State<AddNotesBottomSheet> {
       child: BlocConsumer<AddNoteCubit, MyState>(
         builder: (context, state) {
           return AbsorbPointer(
-            absorbing: state is LoadingSatate ? true : false,
+            absorbing: state is AddNotesLoadingSatate ? true : false,
             child: Padding(
               padding: EdgeInsets.only(
                   left: 16,
@@ -35,10 +35,10 @@ class _AddNotesBottomSheetState extends State<AddNotesBottomSheet> {
           // if (state is LoadingSatate) {
           //   isLoading = true;
           // }
-          if (state is SuccessState) {
+          if (state is AddNotesSuccessState) {
             Navigator.pop(context);
           }
-          if (state is FailureState) {
+          if (state is AddNotesFailureState) {
             print('Failure ${state.errorMessage}');
           }
         },
