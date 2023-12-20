@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:notes_app/add_notes_cubit/notes_cubit/notes_cubit.dart';
+import 'package:notes_app/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/views/widgets/custom_appbar.dart';
 import 'package:notes_app/views/widgets/custom_listviewi_tem.dart';
 

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:notes_app/add_notes_cubit/add_notes_cubit.dart';
 import 'package:notes_app/add_notes_cubit/add_notes_state.dart';
+import 'package:notes_app/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/views/widgets/add_notes_form.dart';
 
 class AddNotesBottomSheet extends StatefulWidget {
@@ -13,6 +14,12 @@ class AddNotesBottomSheet extends StatefulWidget {
 
 class _AddNotesBottomSheetState extends State<AddNotesBottomSheet> {
   // bool isLoading = false;
+
+  void initState() {
+    AddNoteCubit.get(context);
+    super.initState();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -37,6 +44,7 @@ class _AddNotesBottomSheetState extends State<AddNotesBottomSheet> {
           // }
           if (state is AddNotesSuccessState) {
             Navigator.pop(context);
+            NotesCubit.get(context).fetechAllNotes();
           }
           if (state is AddNotesFailureState) {
             print('Failure ${state.errorMessage}');

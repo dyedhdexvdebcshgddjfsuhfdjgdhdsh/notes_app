@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:notes_app/add_notes_cubit/add_notes_cubit.dart';
 import 'package:notes_app/add_notes_cubit/add_notes_state.dart';
 import 'package:notes_app/models/note_model.dart';
+import 'package:notes_app/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/views/widgets/build_buttonaddnote_bottom_sheet.dart';
 import 'package:notes_app/views/widgets/text_field_bottom_sheet.dart';
 
@@ -64,6 +65,7 @@ class _AddNotesFormState extends State<AddNotesForm> {
                               date: DateTime.now().toString(),
                               color: Colors.blue.value);
                           AddNoteCubit.get(context).addNotes(note_model);
+                          NotesCubit.get(context).fetechAllNotes();
                         } else {
                           autovalidateMode = AutovalidateMode.always;
                           setState(() {});
