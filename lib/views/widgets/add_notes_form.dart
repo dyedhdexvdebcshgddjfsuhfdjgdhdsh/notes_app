@@ -6,6 +6,7 @@ import 'package:notes_app/add_notes_cubit/add_notes_state.dart';
 import 'package:notes_app/models/note_model.dart';
 import 'package:notes_app/notes_cubit/notes_cubit.dart';
 import 'package:notes_app/views/widgets/build_buttonaddnote_bottom_sheet.dart';
+import 'package:notes_app/views/widgets/colors_listview.dart';
 import 'package:notes_app/views/widgets/text_field_bottom_sheet.dart';
 
 class AddNotesForm extends StatefulWidget {
@@ -45,7 +46,7 @@ class _AddNotesFormState extends State<AddNotesForm> {
                   onSaved: (value) {
                     subTitle = value;
                   }),
-              ColorItem(),
+              ColorListView(),
               SizedBox(
                 height: 30,
               ),
@@ -82,31 +83,5 @@ class _AddNotesFormState extends State<AddNotesForm> {
         ),
       ),
     );
-  }
-}
-
-class ColorItem extends StatelessWidget {
-  const ColorItem({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return CircleAvatar(
-      radius: 30,
-      backgroundColor: Colors.blue,
-    );
-  }
-}
-
-class ColorListView extends StatelessWidget {
-  const ColorListView({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return ListView.builder(
-        itemCount: 10,
-        scrollDirection: Axis.horizontal,
-        itemBuilder: (context, index) {
-          return ColorItem();
-        });
   }
 }
