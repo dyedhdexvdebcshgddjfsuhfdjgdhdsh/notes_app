@@ -17,7 +17,7 @@ class _NoteItemState extends State<NoteItem> {
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return EditNoteView();
+          return EditNoteView(noteModel: widget.noteModel);
         }));
       },
       child: Container(
@@ -54,7 +54,7 @@ class _NoteItemState extends State<NoteItem> {
                   onPressed: () {
                     Navigator.push(context,
                         MaterialPageRoute(builder: (context) {
-                      return EditNoteView();
+                      return EditNoteView(noteModel: widget.noteModel);
                     }));
                   },
                   icon: Icon(
